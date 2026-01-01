@@ -1,4 +1,4 @@
-## Customer Satisfaction Prediction System 🚀
+# Customer Satisfaction Prediction System 🚀
 
 An end-to-end Machine Learning project that predicts whether a customer is Satisfied or Not Satisfied based on service quality, demographics, and experience ratings.
 
