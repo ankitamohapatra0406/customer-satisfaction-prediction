@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Customer Satisfaction Predictor</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #e3f2fd, #ffffff);
+            text-align: center;
+            padding: 40px;
+        }
+
+        h1 {
+            color: #0d47a1;
+        }
+
+        form {
+            background: white;
+            display: inline-block;
+            padding: 25px 40px;
+            border-radius: 12px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.2);
+            margin-top: 20px;
+        }
+
+        input {
+            padding: 8px;
+            margin: 6px;
+            width: 260px;
+            border-radius: 6px;
+            border: 1px solid #aaa;
+        }
+
+        button {
+            margin-top: 12px;
+            padding: 10px 25px;
+            border-radius: 8px;
+            border: none;
+            background: #0d47a1;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #1565c0;
+        }
+
+        .result {
+            margin-top: 20px;
+            font-size: 22px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+<h1>Customer Satisfaction Prediction</h1>
+<p>Enter customer service details to predict satisfaction</p>
+
+<form method="post">
+
+Age: <br><input name="Age" required><br>
+Flight Distance: <br><input name="Flight Distance" required><br>
+Seat Comfort (1–10): <br><input name="Seat comfort" required><br>
+Inflight Wifi Service (1–10): <br><input name="Inflight wifi service" required><br>
+Online Boarding (1–10): <br><input name="Online boarding" required><br>
+Baggage Handling (1–10): <br><input name="Baggage handling" required><br>
+Cleanliness (1–10): <br><input name="Cleanliness" required><br>
+Check-in Service (1–10): <br><input name="Checkin service" required><br>
+Inflight Entertainment (1–10): <br><input name="Inflight entertainment" required><br>
+On-board Service (1–10): <br><input name="On-board service" required><br>
+Leg Room Service (1–10): <br><input name="Leg room service" required><br>
+Departure Delay in Minutes: <br><input name="Departure Delay in Minutes" required><br>
+
+<button type="submit">Predict Satisfaction</button>
+</form>
+
+{% if result %}
+<div class="result">
+    Prediction: {{ result }}
+</div>
+{% endif %}
+
+</body>
+</html>

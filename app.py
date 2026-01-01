@@ -1,14 +1,20 @@
-from flask import Flask, request, jsonify
+from flask import Flask, render_template, request, jsonify
 from src.predict import predict_customer
 
 app = Flask(__name__)
 
-@app.route("/")
+@app.route("/", methods=["GET", "POST"])
 def home():
-    return "Customer Satisfaction Prediction API is Running!"
+    result = None
+    if request.method == "POST":
+        data = dict(request.form)
+        for k in data:
+            data[k] = float(data[k])
+        result = predict_customer(data)
+    return render_template("index.html", result=result)
 
 @app.route("/predict", methods=["POST"])
-def predict():
+def api_predict():
     data = request.json
     result = predict_customer(data)
     return jsonify({"prediction": result})
