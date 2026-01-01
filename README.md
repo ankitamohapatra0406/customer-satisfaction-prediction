@@ -4,50 +4,34 @@ An end-to-end Machine Learning project that predicts whether a customer is Satis
 
 This project simulates a real-world customer feedback analytics system used by airlines, telecom companies, and e-commerce platforms to improve service quality and reduce churn.
 
-🔍 Problem Statement
+# 🔍 Problem Statement
 
-Customer satisfaction is a critical KPI for businesses.
-This system predicts customer satisfaction using historical survey data, enabling companies to:
+  Customer satisfaction is a critical KPI for businesses.
+  This system predicts customer satisfaction using historical survey data, enabling companies to:
+  Detect unhappy customers early
+  Improve services
+  Increase customer retention
+  Make data-driven business decisions
 
-Detect unhappy customers early
+# ⚙️ Tech Stack
 
-Improve services
+ - Python
+ - Pandas, NumPy
+ - Scikit-Learn
+ - RandomForest Classifier
+ - Flask API
+ - Matplotlib & Seaborn
 
-Increase customer retention
+# 🧠 Machine Learning Pipeline
 
-Make data-driven business decisions
+ - Data Cleaning & Encoding
+ - Exploratory Data Analysis (EDA)
+ - Feature Engineering
+ - Model Training & Evaluation
+ - Model Serialization
+ - REST API Deployment
 
-⚙️ Tech Stack
-
-Python
-
-Pandas, NumPy
-
-Scikit-Learn
-
-RandomForest Classifier
-
-Flask API
-
-Matplotlib & Seaborn
-
-Git & GitHub
-
-🧠 Machine Learning Pipeline
-
-Data Cleaning & Encoding
-
-Exploratory Data Analysis (EDA)
-
-Feature Engineering
-
-Model Training & Evaluation
-
-Model Serialization
-
-REST API Deployment
-
-📊 Model Performance
+# 📊 Model Performance
 | Model                  | Accuracy   |
 | ---------------------- | ---------- |
 | RandomForestClassifier | **96.31%** |
