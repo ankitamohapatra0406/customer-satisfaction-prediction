@@ -1,23 +1,27 @@
 import joblib
 import pandas as pd
+import os
 
-model = joblib.load("models/model.pkl")
-FEATURES = model.feature_names_in_
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+MODEL_PATH = os.path.join(BASE_DIR, "models", "model.pkl")
 
-def scale(v):
-    # convert 1–10 rating into 0–4 scale
-    return round((v - 1) * 4 / 9, 2)
+model = joblib.load(MODEL_PATH)
 
-def prepare_input(data):
-    row = {}
-    for f in FEATURES:
-        if f in data:
-            row[f] = scale(float(data[f])) if "service" in f.lower() or "comfort" in f.lower() else float(data[f])
-        else:
-            row[f] = 0
-    return pd.DataFrame([row])
+FEATURES = [
+    "Seat comfort",
+    "Inflight wifi service",
+    "Online boarding",
+    "Baggage handling",
+    "Cleanliness",
+    "Checkin service",
+    "Inflight entertainment",
+    "On-board service",
+    "Leg room service",
+    "Departure Delay in Minutes"
+]
 
-def predict_customer(data_dict):
-    df = prepare_input(data_dict)
+def predict_customer(data):
+    row = {f: float(data.get(f, 0)) for f in FEATURES}
+    df = pd.DataFrame([row])
     pred = model.predict(df)[0]
-    return "Satisfied 😄" if pred == 1 else "Not Satisfied 😞"
+    return "Satisfied 😊" if pred == 1 else "Not Satisfied 😞"
