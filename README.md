@@ -34,4 +34,4 @@ This project simulates a real-world customer feedback analytics system used by a
 # 📊 Model Performance
 | Model                  | Accuracy   |
 | ---------------------- | ---------- |
-| RandomForestClassifier | **96.31%** |
+| RandomForestClassifier | **91.16%** |
